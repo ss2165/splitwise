@@ -143,7 +143,8 @@ class Splitwise(object):
 
         content = self.__makeRequest(Splitwise.GET_FRIENDS_URL)
         content = json.loads(content.decode("utf-8"))
-
+        ##SEYON
+        return content
         friends = []
         if "friends" in content:
             for f in content["friends"]:
@@ -155,7 +156,7 @@ class Splitwise(object):
 
         content = self.__makeRequest(Splitwise.GET_GROUPS_URL)
         content = json.loads(content.decode("utf-8"))
-
+        
         groups = []
         if "groups" in content:
             for g in content["groups"]:
@@ -215,6 +216,8 @@ class Splitwise(object):
         url += self.__prepareOptionsUrl(options)
         content = self.__makeRequest(url)
         content = json.loads(content.decode("utf-8"))
+        ##SEYON
+        return content
         expenses = []
         if "expenses" in content:
             for e in content["expenses"]:
